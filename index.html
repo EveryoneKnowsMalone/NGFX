@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a237e">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <title>NGFX</title>
+</head>
+<body>
+  <header class="ngfx-header">
+    <span class="ngfx-logo">💱</span>
+    <span class="ngfx-title">NGFX</span>
+    <span class="ngfx-subtitle">Forex Tools & Analysis</span>
+  </header>
+
+  <main class="ngfx-main">
+    <section id="dashboard" class="ngfx-section active">
+      <h2>Welcome to NGFX<span id="dashboard-welcome-name"></span></h2>
+      <div class="ngfx-nav-grid">
+        <a class="ngfx-nav-card" href="#major-pairs">
+          <span class="ngfx-card-icon">💹</span>
+          <div>
+            <h3>Major Pairs</h3>
+            <p>View live rates for major forex pairs.</p>
+          </div>
+        </a>
+        <a class="ngfx-nav-card" href="#analysis">
+          <span class="ngfx-card-icon">📊</span>
+          <div>
+            <h3>Analysis & Signals</h3>
+            <p>Get the latest trading signals and analysis.</p>
+          </div>
+        </a>
+        <a class="ngfx-nav-card" href="#news">
+          <span class="ngfx-card-icon">📰</span>
+          <div>
+            <h3>Market News</h3>
+            <p>Stay updated with real-time forex news.</p>
+          </div>
+        </a>
+        <a class="ngfx-nav-card" href="#tools">
+          <span class="ngfx-card-icon">🛠️</span>
+          <div>
+            <h3>Tools</h3>
+            <p>Access calculators, converters, and more.</p>
+          </div>
+        </a>
+        <a class="ngfx-nav-card" href="#calendar">
+          <span class="ngfx-card-icon">📅</span>
+          <div>
+            <h3>Economic Calendar</h3>
+            <p>Track upcoming economic events and releases.</p>
+          </div>
+        </a>
+        <a class="ngfx-nav-card" href="#settings">
+          <span class="ngfx-card-icon">⚙️</span>
+          <div>
+            <h3>Settings</h3>
+            <p>Manage your preferences and personal info.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section id="major-pairs" class="ngfx-section">
+      <h2>Major Pairs</h2>
+      <div id="major-pairs-list" class="major-pairs-list"></div>
+    </section>
+    <section id="analysis" class="ngfx-section">
+      <h2>Analysis & Signals</h2>
+      <div class="ngfx-card">
+        <span class="ngfx-card-icon">📊</span>
+        <div>
+          <h3>Trading Signals</h3>
+          <p>Get the latest buy/sell signals and technical analysis for major pairs.</p>
+        </div>
+      </div>
+      <div class="ngfx-card">
+        <span class="ngfx-card-icon">📈</span>
+        <div>
+          <h3>Technical Analysis</h3>
+          <p>Charts, indicators, and trend analysis for smarter trading decisions.</p>
+        </div>
+      </div>
+    </section>
+    <section id="news" class="ngfx-section">
+      <h2>Market News</h2>
+      <div class="ngfx-card">
+        <span class="ngfx-card-icon">📰</span>
+        <div>
+          <h3>Latest Headlines</h3>
+          <p>Stay updated with real-time forex and economic news.</p>
+        </div>
+      </div>
+      <div class="ngfx-card">
+        <span class="ngfx-card-icon">⏰</span>
+        <div>
+          <h3>Event Alerts</h3>
+          <p>Get notified about high-impact economic events and releases.</p>
+        </div>
+      </div>
+    </section>
+    <section id="settings" class="ngfx-section">
+      <h2>Settings</h2>
+      <form id="settings-form" class="ngfx-card ngfx-settings-form">
+        <div class="form-group">
+          <label for="user-name">Name</label>
+          <input type="text" id="user-name" name="user-name" placeholder="Enter your name" autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="fav-pair">Favourite Pair</label>
+          <select id="fav-pair" name="fav-pair">
+            <option value="">Select pair</option>
+            <option value="EUR/USD">EUR/USD</option>
+            <option value="GBP/USD">GBP/USD</option>
+            <option value="USD/JPY">USD/JPY</option>
+            <option value="AUD/USD">AUD/USD</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="style">Trading Style</label>
+          <input type="text" id="style" name="style" placeholder="e.g. Scalper, Swing Trader" autocomplete="off" />
+        </div>
+        <div class="form-group">
+          <label for="bio">Bio</label>
+          <textarea id="bio" name="bio" rows="2" placeholder="Short bio..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="theme">Theme</label>
+          <select id="theme" name="theme">
+            <option value="system">System</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
+        <div class="form-group form-switch">
+          <label for="notifications">Notifications</label>
+          <input type="checkbox" id="notifications" name="notifications" />
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="settings-save-btn">Save</button>
+          <button type="button" class="settings-reset-btn">Reset</button>
+        </div>
+      </form>
+    </section>
+    <section id="tools" class="ngfx-section">
+      <h2>Tools</h2>
+      <div id="tools-home" class="ngfx-tool-grid">
+        <div class="ngfx-nav-card tool-card" data-tool="market-position">
+          <span class="ngfx-card-icon">📈</span>
+          <div>
+            <h3>Market Position Tool</h3>
+            <p>Calculate your optimal lot size based on risk and stop loss.</p>
+          </div>
+        </div>
+        <div class="ngfx-nav-card tool-card" data-tool="market-hours">
+          <span class="ngfx-card-icon">⏰</span>
+          <div>
+            <h3>Market Hours</h3>
+            <p>See which major forex markets are open right now.</p>
+          </div>
+        </div>
+        <!-- Add more tool cards here in the future -->
+      </div>
+      <section id="tool-market-position" style="display:none; margin-top:1.5rem;">
+        <form id="market-position-form" class="ngfx-card" style="flex-direction: column; gap: 1.2rem; align-items: stretch;">
+          <div class="form-group">
+            <label for="mp-pair">Pair</label>
+            <select id="mp-pair" name="mp-pair" required>
+              <option value="">Select pair</option>
+              <option value="EUR/USD">EUR/USD</option>
+              <option value="GBP/USD">GBP/USD</option>
+              <option value="USD/JPY">USD/JPY</option>
+              <option value="AUD/USD">AUD/USD</option>
+              <option value="USD/CAD">USD/CAD</option>
+              <option value="USD/CHF">USD/CHF</option>
+              <option value="NZD/USD">NZD/USD</option>
+              <option value="EUR/GBP">EUR/GBP</option>
+              <option value="EUR/JPY">EUR/JPY</option>
+              <option value="GBP/JPY">GBP/JPY</option>
+              <option value="AUD/JPY">AUD/JPY</option>
+              <option value="EUR/AUD">EUR/AUD</option>
+              <option value="USD/SGD">USD/SGD</option>
+              <option value="USD/ZAR">USD/ZAR</option>
+              <option value="USD/TRY">USD/TRY</option>
+              <option value="USD/MXN">USD/MXN</option>
+              <option value="USD/HKD">USD/HKD</option>
+              <option value="USD/SEK">USD/SEK</option>
+              <option value="USD/NOK">USD/NOK</option>
+              <option value="USD/DKK">USD/DKK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mp-stoploss">Stop Loss (pips)</label>
+            <div class="custom-number-input">
+              <button type="button" class="num-btn" data-target="mp-stoploss" data-action="decrement">-</button>
+              <input type="number" id="mp-stoploss" name="mp-stoploss" min="1" required />
+              <button type="button" class="num-btn" data-target="mp-stoploss" data-action="increment">+</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mp-risk-percent">Risk Percentage (%)</label>
+            <div class="custom-number-input">
+              <button type="button" class="num-btn" data-target="mp-risk-percent" data-action="decrement">-</button>
+              <input type="number" id="mp-risk-percent" name="mp-risk-percent" min="0.01" max="100" step="0.01" required />
+              <button type="button" class="num-btn" data-target="mp-risk-percent" data-action="increment">+</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mp-balance">Account Balance</label>
+            <div class="custom-number-input">
+              <button type="button" class="num-btn" data-target="mp-balance" data-action="decrement">-</button>
+              <input type="number" id="mp-balance" name="mp-balance" min="0.01" step="0.01" required />
+              <button type="button" class="num-btn" data-target="mp-balance" data-action="increment">+</button>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="settings-save-btn">Calculate</button>
+            <button type="button" id="mp-back-btn" class="settings-reset-btn">Back to Tools</button>
+          </div>
+        </form>
+        <div id="mp-result" class="ngfx-card" style="display:none; flex-direction: column; align-items: flex-start; margin-top: 1rem;"></div>
+      </section>
+      <section id="tool-market-hours" style="display:none; margin-top:1.5rem;">
+        <div class="ngfx-card" style="flex-direction: column; gap: 1.2rem; align-items: stretch;">
+          <h3>Major Forex Market Hours</h3>
+          <div id="market-hours-table"></div>
+          <button type="button" id="mh-back-btn" class="settings-reset-btn" style="align-self: flex-end;">Back to Tools</button>
+        </div>
+      </section>
+    </section>
+    <section id="calendar" class="ngfx-section">
+      <h2>Economic Calendar</h2>
+      <div class="ngfx-card">
+        <span class="ngfx-card-icon">📅</span>
+        <div>
+          <h3>Economic Events</h3>
+          <p>Upcoming economic releases and their impact.</p>
+        </div>
+      </div>
+    </section>
+    <section id="profile" class="ngfx-section">
+      <h2>Profile</h2>
+      <div class="ngfx-card ngfx-profile-card">
+        <div class="profile-avatar" id="profile-avatar">👤</div>
+        <div class="profile-info">
+          <div><strong>Name:</strong> <span id="profile-name">-</span></div>
+          <div><strong>Favourite Pair:</strong> <span id="profile-fav-pair">-</span> <span id="profile-fav-pair-price"></span></div>
+          <div><strong>Trading Style:</strong> <span id="profile-style">-</span></div>
+          <div><strong>Bio:</strong> <span id="profile-bio">-</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="ngfx-bottom-nav">
+    <button class="nav-btn active" data-target="dashboard"><span>🏠</span><span class="nav-label">Home</span></button>
+    <button class="nav-btn" data-target="tools"><span>🛠️</span><span class="nav-label">Tools</span></button>
+    <button class="nav-btn" data-target="calendar"><span>📅</span><span class="nav-label">Calendar</span></button>
+    <button class="nav-btn" data-target="profile"><span>👤</span><span class="nav-label">Profile</span></button>
+  </nav>
+
+  <footer class="ngfx-footer">
+    <p>&copy; 2024 NGFX. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html> 
